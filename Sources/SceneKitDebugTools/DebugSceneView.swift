@@ -12,10 +12,13 @@ public struct DebugSceneView: View {
     let scene: SCNScene
 
     public var body: some View {
+        HStack {
+            SceneInfoView(scene: scene)
             SceneView(
                 scene: scene,
                 options: [.allowsCameraControl, .autoenablesDefaultLighting]
             )
+        }
     }
 }
 

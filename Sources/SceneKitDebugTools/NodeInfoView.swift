@@ -12,7 +12,7 @@ struct NodeInfoView: View {
     let node: SCNNode
     var body: some View {
         VStack {
-            Text("Name: \(node.name ?? "")")
+            Text("Name: \(node.name ?? ""), children: \(node.childNodes.count)")
             Text("\(node.debugDescription)")
             
             Text("Position").bold()
