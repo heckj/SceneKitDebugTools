@@ -10,11 +10,7 @@ import SwiftUI
 struct AngleView: View {
     let angle: Angle
     var body: some View {
-        VStack {
-            Text("\(angle.radians.formatted(.number.precision(.integerAndFractionLength(integerLimits: 1...2, fractionLimits: 0...3))))  (\(angle.degrees.formatted(.number.notation(.compactName)))°)")
-        }
-        .padding(2)
-        .border(.blue)
+        Text("\(angle.radians.formatted(.number.precision(.integerAndFractionLength(integerLimits: 1...2, fractionLimits: 0...3))))  (\(angle.degrees.formatted(.number.notation(.compactName)))°)")
     }
 }
 
