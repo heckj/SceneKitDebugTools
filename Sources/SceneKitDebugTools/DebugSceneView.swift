@@ -20,6 +20,9 @@ public struct DebugSceneView: View {
             )
         }
     }
+    public init(scene: SCNScene) {
+        self.scene = scene
+    }
 }
 
 struct DebugSceneView_Previews: PreviewProvider {

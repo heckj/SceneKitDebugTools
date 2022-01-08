@@ -3,7 +3,6 @@
 
 import PackageDescription
 
-//@available(macOS 12.0, iOS 15.0, *)
 let package = Package(
     name: "SceneKitDebugTools",
     platforms: [

@@ -21,7 +21,7 @@ func material(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> SC
     return material
 }
 
-func debugFlooring(grid: Bool = true) -> SCNNode {
+public func debugFlooring(grid: Bool = true) -> SCNNode {
     let flooring = SCNNode(geometry: SCNPlane(width: 10, height: 10))
     flooring.geometry?.materials = [material(red: 0.1, green: 0.7, blue: 0.1, alpha: 0.5)]
     flooring.simdEulerAngles = simd_float3(x: degreesToRadians(-90), y: 0, z: 0)
@@ -58,7 +58,7 @@ func debugFlooring(grid: Bool = true) -> SCNNode {
     return flooring
 }
 
-func headingIndicator() -> SCNNode {
+public func headingIndicator() -> SCNNode {
     let redRingGeometry = SCNTorus(ringRadius: 0.5, pipeRadius: 0.01)
     redRingGeometry.ringSegmentCount = 36
     redRingGeometry.pipeSegmentCount = 8
