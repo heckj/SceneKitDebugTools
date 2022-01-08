@@ -1,19 +1,19 @@
 //
 //  SceneInfoView.swift
-//  
+//
 //
 //  Created by Joseph Heck on 1/8/22.
 //
 
-import SwiftUI
 import SceneKit
+import SwiftUI
 
 struct SceneInfoView: View {
     let scene: SCNScene
     @State private var node: SCNNode
     @State private var searchText: String = ""
     @FocusState private var searchFieldIsFocused: Bool
-    
+
     var body: some View {
         VStack {
             Text("\(scene.debugDescription)")
@@ -29,16 +29,15 @@ struct SceneInfoView: View {
                         } else {
                             self.node = scene.rootNode
                         }
-                        
                     }
             }
             NodeInfoView(node: node)
         }
     }
-    
+
     public init(scene: SCNScene) {
         self.scene = scene
-        self.node = scene.rootNode
+        node = scene.rootNode
     }
 }
 

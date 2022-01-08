@@ -1,5 +1,5 @@
-import XCTest
 @testable import SceneKitDebugTools
+import XCTest
 
 final class SceneKitDebugToolsTests: XCTestCase {
     func testExample() throws {

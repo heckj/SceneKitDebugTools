@@ -1,12 +1,12 @@
 //
 //  DebugSceneView.swift
-//  
+//
 //
 //  Created by Joseph Heck on 1/8/22.
 //
 
-import SwiftUI
 import SceneKit
+import SwiftUI
 
 public struct DebugSceneView: View {
     let scene: SCNScene
@@ -20,6 +20,7 @@ public struct DebugSceneView: View {
             )
         }
     }
+
     public init(scene: SCNScene) {
         self.scene = scene
     }
@@ -44,6 +45,7 @@ struct DebugSceneView_Previews: PreviewProvider {
 
         return scene
     }
+
     static var previews: some View {
         DebugSceneView(scene: generateExampleScene())
     }

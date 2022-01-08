@@ -1,12 +1,12 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Joseph Heck on 1/8/22.
 //
 
-import SwiftUI
 import SceneKit
+import SwiftUI
 
 struct EulerAngleView: View {
     let eulerAngles: simd_float3
@@ -30,6 +30,6 @@ struct EulerAngleView: View {
 
 struct EulerAngleView_Previews: PreviewProvider {
     static var previews: some View {
-        EulerAngleView(eulerAngles: simd_float3(0,0,0))
+        EulerAngleView(eulerAngles: simd_float3(0, 0, 0))
     }
 }

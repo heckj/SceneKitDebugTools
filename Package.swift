@@ -7,13 +7,14 @@ let package = Package(
     name: "SceneKitDebugTools",
     platforms: [
         .macOS(.v12),
-        .iOS(.v15)
+        .iOS(.v15),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SceneKitDebugTools",
-            targets: ["SceneKitDebugTools"]),
+            targets: ["SceneKitDebugTools"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,9 +25,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SceneKitDebugTools",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "SceneKitDebugToolsTests",
-            dependencies: ["SceneKitDebugTools"]),
+            dependencies: ["SceneKitDebugTools"]
+        ),
     ]
 )

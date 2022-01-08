@@ -1,12 +1,12 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Joseph Heck on 1/8/22.
 //
 
-import SwiftUI
 import simd
+import SwiftUI
 
 struct QuaternionView: View {
     let quat: simd_quatf
@@ -26,6 +26,6 @@ struct QuaternionView: View {
 
 struct QuaternionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuaternionView(quat: simd_quatf(angle: Float.pi/3, axis: simd_float3(1,0,0)))
+        QuaternionView(quat: simd_quatf(angle: Float.pi / 3, axis: simd_float3(1, 0, 0)))
     }
 }

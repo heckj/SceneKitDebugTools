@@ -5,8 +5,8 @@
 //  Created by Joseph Heck on 1/8/22.
 //
 
-import SwiftUI
 import SceneKit
+import SwiftUI
 
 struct NodeInfoView: View {
     let node: SCNNode
@@ -14,10 +14,10 @@ struct NodeInfoView: View {
         VStack {
             Text("Name: \(node.name ?? ""), children: \(node.childNodes.count)")
             Text("\(node.debugDescription)")
-            
+
             Text("Position").bold()
             Simd3View(simdValue: node.simdPosition)
-            
+
             Text("Rotation").bold()
             HStack {
                 Simd4View(simdValue: node.simdRotation)
@@ -29,7 +29,7 @@ struct NodeInfoView: View {
             }
             Text("Orientation").bold()
             QuaternionView(quat: node.simdOrientation)
-            
+
             Text("Transform").bold()
             Simd4x4View(simdValue: node.simdTransform)
         }

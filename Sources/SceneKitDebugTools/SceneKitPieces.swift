@@ -78,12 +78,12 @@ public func headingIndicator() -> SCNNode {
     // green = torus in direction around Y axis - aligned with green heading indicator, affected by yaw
 
     let ring2 = SCNNode(geometry: redRingGeometry)
-    let ring2rotationTransform = rotationAroundXAxisTransform(angle: Float.pi/2)
+    let ring2rotationTransform = rotationAroundXAxisTransform(angle: Float.pi / 2)
     ring2.simdTransform = matrix_multiply(matrix_identity_float4x4, ring2rotationTransform)
     // red = torus in direction around X axis - affected by pitch
-    
+
     let ring3 = SCNNode(geometry: blueRingGeometry)
-    let ring3rotationTransform = rotationAroundZAxisTransform(angle: Float.pi/2)
+    let ring3rotationTransform = rotationAroundZAxisTransform(angle: Float.pi / 2)
     ring3.simdTransform = matrix_multiply(matrix_identity_float4x4, ring3rotationTransform)
     // blue = torus in direction around Z axis - affected by roll
     basering.addChildNode(ring2)
@@ -91,7 +91,7 @@ public func headingIndicator() -> SCNNode {
 
     let directionCone = SCNNode(geometry: SCNCone(topRadius: 0.0, bottomRadius: 0.25, height: 0.5))
     directionCone.geometry?.materials = [material(red: 0.1, green: 1.0, blue: 0.1, alpha: 1)]
-    directionCone.simdPosition = simd_float3(x: 0, y:0.25, z:0)
+    directionCone.simdPosition = simd_float3(x: 0, y: 0.25, z: 0)
     basering.addChildNode(directionCone)
     return basering
 }
