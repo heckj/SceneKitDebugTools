@@ -1,0 +1,30 @@
+//
+//  SearchableSceneInfoView.swift
+//
+//
+//  Created by Joseph Heck on 1/8/22.
+//
+
+import SceneKit
+import SwiftUI
+
+struct SceneInfoView: View {
+    let scene: SCNScene
+
+    var body: some View {
+        VStack {
+            Text("\(scene.debugDescription)")
+            Text("Paused: \(scene.isPaused ? "Yes" : "No")")
+        }
+    }
+
+    public init(scene: SCNScene) {
+        self.scene = scene
+    }
+}
+
+struct SceneInfoView_Previews: PreviewProvider {
+    static var previews: some View {
+        SceneInfoView(scene: SCNScene())
+    }
+}

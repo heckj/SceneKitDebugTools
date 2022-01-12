@@ -9,29 +9,33 @@ import SceneKit
 import SwiftUI
 
 struct NodeInfoView: View {
-    let node: SCNNode
+    let node: SCNNode?
     var body: some View {
-        VStack {
-            Text("Name: \(node.name ?? ""), children: \(node.childNodes.count)")
-            Text("\(node.debugDescription)")
+        if let node = node {
+            VStack {
+                Text("Name: \(node.name ?? ""), children: \(node.childNodes.count)")
+                Text("\(node.debugDescription)")
 
-            Text("Position").bold()
-            Simd3View(simdValue: node.simdPosition)
+                Text("Position").bold()
+                Simd3View(simdValue: node.simdPosition)
 
-            Text("Rotation").bold()
-            HStack {
-                Simd4View(simdValue: node.simdRotation)
-                EulerAngleView(eulerAngles: node.simdEulerAngles)
-                VStack {
-                    Text("pivot").bold()
-                    Simd4x4View(simdValue: node.simdPivot)
+                Text("Rotation").bold()
+                HStack {
+                    Simd4View(simdValue: node.simdRotation)
+                    EulerAngleView(eulerAngles: node.simdEulerAngles)
+                    VStack {
+                        Text("pivot").bold()
+                        Simd4x4View(simdValue: node.simdPivot)
+                    }
                 }
-            }
-            Text("Orientation").bold()
-            QuaternionView(quat: node.simdOrientation)
+                Text("Orientation").bold()
+                QuaternionView(quat: node.simdOrientation)
 
-            Text("Transform").bold()
-            Simd4x4View(simdValue: node.simdTransform)
+                Text("Transform").bold()
+                Simd4x4View(simdValue: node.simdTransform)
+            }
+        } else {
+            Text("No node selected")
         }
     }
 }

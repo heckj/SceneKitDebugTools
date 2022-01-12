@@ -75,6 +75,7 @@ public func headingIndicator() -> SCNNode {
     greenRingGeometry.materials = [material(red: 0.1, green: 1, blue: 0.1, alpha: 1)]
 
     let basering = SCNNode(geometry: greenRingGeometry)
+    basering.name = "headingIndicator"
     // green = torus in direction around Y axis - aligned with green heading indicator, affected by yaw
 
     let ring2 = SCNNode(geometry: redRingGeometry)

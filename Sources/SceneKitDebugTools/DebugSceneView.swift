@@ -10,10 +10,14 @@ import SwiftUI
 
 public struct DebugSceneView: View {
     let scene: SCNScene
+    let node: SCNNode?
 
     public var body: some View {
         HStack {
-            SceneInfoView(scene: scene)
+            VStack {
+                SceneInfoView(scene: scene)
+                NodeInfoView(node: node)
+            }
             SceneView(
                 scene: scene,
                 options: [.allowsCameraControl, .autoenablesDefaultLighting]
@@ -21,8 +25,9 @@ public struct DebugSceneView: View {
         }
     }
 
-    public init(scene: SCNScene) {
+    public init(scene: SCNScene, node: SCNNode?) {
         self.scene = scene
+        self.node = node
     }
 }
 
@@ -47,6 +52,6 @@ struct DebugSceneView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        DebugSceneView(scene: generateExampleScene())
+        DebugSceneView(scene: generateExampleScene(), node: nil)
     }
 }
