@@ -8,6 +8,7 @@
 import SceneKit
 import SwiftUI
 
+/// A view that provides textually oriented overviews on the left and a 3D view on the right.
 public struct DebugSceneView: View {
     let scene: SCNScene
     let node: SCNNode?

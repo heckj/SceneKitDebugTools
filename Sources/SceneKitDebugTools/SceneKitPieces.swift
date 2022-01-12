@@ -21,6 +21,8 @@ func material(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> SC
     return material
 }
 
+/// Returns a SceneKit node that provides a visual plane, axis references, and an optional grid to display scale.
+/// - Parameter grid: A Boolean value that indicates whether to display the grid.
 public func debugFlooring(grid: Bool = true) -> SCNNode {
     let flooring = SCNNode(geometry: SCNPlane(width: 10, height: 10))
     flooring.geometry?.materials = [material(red: 0.1, green: 0.7, blue: 0.1, alpha: 0.5)]
@@ -58,6 +60,7 @@ public func debugFlooring(grid: Bool = true) -> SCNNode {
     return flooring
 }
 
+/// Returns a SceneKit node that provides a heading indicator.
 public func headingIndicator() -> SCNNode {
     let redRingGeometry = SCNTorus(ringRadius: 0.5, pipeRadius: 0.01)
     redRingGeometry.ringSegmentCount = 36

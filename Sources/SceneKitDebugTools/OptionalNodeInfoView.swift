@@ -8,6 +8,7 @@
 import SceneKit
 import SwiftUI
 
+/// A view that displays a summary of the rotation and positional properties of a scenekit node if provided; otherwise, a default view.
 public struct OptionalNodeInfoView: View {
     let node: SCNNode?
     public var body: some View {

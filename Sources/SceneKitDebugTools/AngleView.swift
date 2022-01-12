@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A view that displays the values for an Angle.
 public struct AngleView: View {
     let angle: Angle
     public var body: some View {

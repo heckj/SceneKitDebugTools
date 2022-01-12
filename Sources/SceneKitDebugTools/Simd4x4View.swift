@@ -7,6 +7,7 @@
 import simd
 import SwiftUI
 
+/// A view that displays the values for a simd four by four float matrix.
 public struct Simd4x4View: View {
     let simdValue: simd_float4x4
     public var body: some View {

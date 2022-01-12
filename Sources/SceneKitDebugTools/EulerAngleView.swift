@@ -8,6 +8,7 @@
 import SceneKit
 import SwiftUI
 
+/// A view that displays the values for a set of Euler Angles.
 public struct EulerAngleView: View {
     let eulerAngles: simd_float3
     public var body: some View {

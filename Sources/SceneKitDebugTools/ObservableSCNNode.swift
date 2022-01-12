@@ -9,6 +9,9 @@ import Combine
 import Foundation
 import SceneKit
 
+/// A class that wraps a SceneKit node to provide an observable object.
+///
+/// The observable object triggers updates when the node's transform changes, or when the node is changed..
 public class ObservableSCNNode: ObservableObject {
     @Published var wrappedNode: SCNNode
     private var kvoWatcher: Cancellable?

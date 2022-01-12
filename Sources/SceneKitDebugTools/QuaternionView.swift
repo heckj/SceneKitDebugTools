@@ -8,6 +8,7 @@
 import simd
 import SwiftUI
 
+/// A view that displays the set of values for a quaternion rotation.
 public struct QuaternionView: View {
     let quat: simd_quatf
     public var body: some View {

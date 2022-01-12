@@ -8,10 +8,11 @@
 import SceneKit
 import SwiftUI
 
-struct SceneInfoView: View {
+/// A view that displays the summary properties for a SceneKit scene.
+public struct SceneInfoView: View {
     let scene: SCNScene
 
-    var body: some View {
+    public var body: some View {
         VStack {
             Text("\(scene.debugDescription)")
             Text("Paused: \(scene.isPaused ? "Yes" : "No")")

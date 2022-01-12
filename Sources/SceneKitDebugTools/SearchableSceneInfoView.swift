@@ -8,6 +8,7 @@
 import SceneKit
 import SwiftUI
 
+/// Provides a SceneKit scene and node overview that supports searching for, and highlighting, named nodes.
 public struct SearchableSceneInfoView: View {
     let scene: SCNScene
     @State private var node: SCNNode
