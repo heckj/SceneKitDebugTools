@@ -16,7 +16,7 @@ public struct DebugSceneView: View {
         HStack {
             VStack {
                 SceneInfoView(scene: scene)
-                NodeInfoView(node: node)
+                OptionalNodeInfoView(node: node)
             }
             SceneView(
                 scene: scene,

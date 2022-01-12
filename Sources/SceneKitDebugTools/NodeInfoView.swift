@@ -9,38 +9,35 @@ import SceneKit
 import SwiftUI
 
 public struct NodeInfoView: View {
-    let node: SCNNode?
+    @ObservedObject var node: ObservableSCNNode
+    
     public var body: some View {
-        if let node = node {
-            VStack {
-                Text("Name: \(node.name ?? ""), children: \(node.childNodes.count)")
-                Text("\(node.debugDescription)")
+        VStack {
+            Text("Name: \(node.wrappedNode.name ?? ""), children: \(node.wrappedNode.childNodes.count)")
+            Text("\(node.wrappedNode.debugDescription)")
 
-                Text("Position").bold()
-                Simd3View(simdValue: node.simdPosition)
+            Text("Position").bold()
+            Simd3View(simdValue: node.wrappedNode.simdPosition)
 
-                Text("Rotation").bold()
-                HStack {
-                    Simd4View(simdValue: node.simdRotation)
-                    EulerAngleView(eulerAngles: node.simdEulerAngles)
-                    VStack {
-                        Text("pivot").bold()
-                        Simd4x4View(simdValue: node.simdPivot)
-                    }
+            Text("Rotation").bold()
+            HStack {
+                Simd4View(simdValue: node.wrappedNode.simdRotation)
+                EulerAngleView(eulerAngles: node.wrappedNode.simdEulerAngles)
+                VStack {
+                    Text("pivot").bold()
+                    Simd4x4View(simdValue: node.wrappedNode.simdPivot)
                 }
-                Text("Orientation").bold()
-                QuaternionView(quat: node.simdOrientation)
-
-                Text("Transform").bold()
-                Simd4x4View(simdValue: node.simdTransform)
             }
-        } else {
-            Text("No node selected")
+            Text("Orientation").bold()
+            QuaternionView(quat: node.wrappedNode.simdOrientation)
+
+            Text("Transform").bold()
+            Simd4x4View(simdValue: node.wrappedNode.simdTransform)
         }
     }
 
-    public init(node: SCNNode?) {
-        self.node = node
+    public init(node: SCNNode) {
+        self.node = ObservableSCNNode(node)
     }
 }
 
