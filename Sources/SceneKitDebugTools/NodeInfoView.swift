@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct NodeInfoView: View {
     @ObservedObject var node: ObservableSCNNode
-    
+
     public var body: some View {
         VStack {
             Text("Name: \(node.wrappedNode.name ?? ""), children: \(node.wrappedNode.childNodes.count)")

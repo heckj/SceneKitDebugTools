@@ -8,11 +8,11 @@
 import SceneKit
 
 func degreesToRadians(_ value: Double) -> Float {
-    return Float(value * .pi / 180.0)
+    Float(value * .pi / 180.0)
 }
 
 func degrees(radians: Float) -> Float {
-    return radians / .pi * 180.0
+    radians / .pi * 180.0
 }
 
 func material(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> SCNMaterial {

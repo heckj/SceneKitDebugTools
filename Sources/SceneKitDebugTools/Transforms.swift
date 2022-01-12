@@ -14,7 +14,7 @@ import simd
 ///   - z: The amount to translate along the Z axis.
 /// - Returns: A translation transform.
 func translationTransform(x: Float, y: Float, z: Float) -> simd_float4x4 {
-    return simd_float4x4(
+    simd_float4x4(
         SIMD4<Float>(1, 0, 0, 0),
         SIMD4<Float>(0, 1, 0, 0),
         SIMD4<Float>(0, 0, 1, 0),
@@ -29,7 +29,7 @@ func translationTransform(x: Float, y: Float, z: Float) -> simd_float4x4 {
 ///   - z: The amount to scale along the Z axis.
 /// - Returns: A scaling transform.
 func scalingTransform(x: Float, y: Float, z: Float) -> simd_float4x4 {
-    return simd_float4x4(
+    simd_float4x4(
         SIMD4<Float>(x, 0, 0, 0),
         SIMD4<Float>(0, y, 0, 0),
         SIMD4<Float>(0, 0, z, 0),
@@ -41,7 +41,7 @@ func scalingTransform(x: Float, y: Float, z: Float) -> simd_float4x4 {
 /// - Parameter angle: The amount (in radians) to rotate around the Z axis.
 /// - Returns: A Z-axis rotation transform.
 func rotationAroundZAxisTransform(angle: Float) -> simd_float4x4 {
-    return simd_float4x4(
+    simd_float4x4(
         SIMD4<Float>(cos(angle), sin(angle), 0, 0),
         SIMD4<Float>(-sin(angle), cos(angle), 0, 0),
         SIMD4<Float>(0, 0, 1, 0),
@@ -53,7 +53,7 @@ func rotationAroundZAxisTransform(angle: Float) -> simd_float4x4 {
 /// - Parameter angle: The amount (in radians) to rotate around the X axis.
 /// - Returns: A X-axis rotation transform.
 func rotationAroundXAxisTransform(angle: Float) -> simd_float4x4 {
-    return simd_float4x4(
+    simd_float4x4(
         SIMD4<Float>(1, 0, 0, 0),
         SIMD4<Float>(0, cos(angle), sin(angle), 0),
         SIMD4<Float>(0, -sin(angle), cos(angle), 0),
@@ -65,7 +65,7 @@ func rotationAroundXAxisTransform(angle: Float) -> simd_float4x4 {
 /// - Parameter angle: The amount (in radians) to rotate around the Y axis.
 /// - Returns: A Y-axis rotation transform.
 func rotationAroundYAxisTransform(angle: Float) -> simd_float4x4 {
-    return simd_float4x4(
+    simd_float4x4(
         SIMD4<Float>(cos(angle), 0, -sin(angle), 0),
         SIMD4<Float>(0, 1, 0, 0),
         SIMD4<Float>(sin(angle), 0, cos(angle), 0),
