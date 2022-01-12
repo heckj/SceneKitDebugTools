@@ -8,9 +8,9 @@
 import SceneKit
 import SwiftUI
 
-struct NodeInfoView: View {
+public struct NodeInfoView: View {
     let node: SCNNode?
-    var body: some View {
+    public var body: some View {
         if let node = node {
             VStack {
                 Text("Name: \(node.name ?? ""), children: \(node.childNodes.count)")
@@ -37,6 +37,10 @@ struct NodeInfoView: View {
         } else {
             Text("No node selected")
         }
+    }
+
+    public init(node: SCNNode?) {
+        self.node = node
     }
 }
 

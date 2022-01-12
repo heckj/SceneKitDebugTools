@@ -8,9 +8,9 @@
 import SceneKit
 import SwiftUI
 
-struct EulerAngleView: View {
+public struct EulerAngleView: View {
     let eulerAngles: simd_float3
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack {
                 Text("Pitch")
@@ -25,6 +25,10 @@ struct EulerAngleView: View {
                 AngleView(angle: Angle(radians: Double(eulerAngles.y)))
             }
         }
+    }
+
+    public init(eulerAngles: simd_float3) {
+        self.eulerAngles = eulerAngles
     }
 }
 

@@ -8,11 +8,10 @@
 import simd
 import SwiftUI
 
-struct QuaternionView: View {
+public struct QuaternionView: View {
     let quat: simd_quatf
-    var body: some View {
+    public var body: some View {
         VStack {
-//            Text("\(quat.debugDescription)")
             Simd4View(simdValue: quat.vector)
             HStack {
                 Text("Angle:")
@@ -21,6 +20,10 @@ struct QuaternionView: View {
                 Simd3View(simdValue: quat.axis)
             }
         }
+    }
+
+    public init(quat: simd_quatf) {
+        self.quat = quat
     }
 }
 

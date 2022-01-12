@@ -7,9 +7,9 @@
 import simd
 import SwiftUI
 
-struct Simd4x4View: View {
+public struct Simd4x4View: View {
     let simdValue: simd_float4x4
-    var body: some View {
+    public var body: some View {
         HStack {
             VStack {
                 Text(simdValue.columns.0.x,
@@ -70,6 +70,10 @@ struct Simd4x4View: View {
         }
         .padding(2)
         .border(.blue)
+    }
+
+    public init(simdValue: simd_float4x4) {
+        self.simdValue = simdValue
     }
 }
 

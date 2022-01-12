@@ -8,13 +8,13 @@
 import SceneKit
 import SwiftUI
 
-struct SearchableSceneInfoView: View {
+public struct SearchableSceneInfoView: View {
     let scene: SCNScene
     @State private var node: SCNNode
     @State private var searchText: String = ""
     @FocusState private var searchFieldIsFocused: Bool
 
-    var body: some View {
+    public var body: some View {
         VStack {
             Text("\(scene.debugDescription)")
             Text("Paused: \(scene.isPaused ? "Yes" : "No")")

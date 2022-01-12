@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct AngleView: View {
+public struct AngleView: View {
     let angle: Angle
-    var body: some View {
+    public var body: some View {
         Text("\(angle.radians.formatted(.number.precision(.integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3))))  (\(angle.degrees.formatted(.number.notation(.compactName)))°)")
+    }
+
+    public init(angle: Angle) {
+        self.angle = angle
     }
 }
 

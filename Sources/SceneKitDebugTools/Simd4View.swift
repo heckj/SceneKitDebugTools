@@ -7,10 +7,10 @@
 import simd
 import SwiftUI
 
-struct Simd4View: View {
+public struct Simd4View: View {
     let simdValue: simd_float4
 
-    var body: some View {
+    public var body: some View {
         HStack {
             Text(simdValue.x, format: .number.precision(
                 .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
@@ -23,6 +23,10 @@ struct Simd4View: View {
         }
         .padding(2)
         .border(.blue)
+    }
+
+    public init(simdValue: simd_float4) {
+        self.simdValue = simdValue
     }
 }
 
