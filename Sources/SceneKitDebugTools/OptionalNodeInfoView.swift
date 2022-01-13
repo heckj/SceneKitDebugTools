@@ -14,10 +14,10 @@ public struct OptionalNodeInfoView: View {
     public var body: some View {
         if let node = node {
             NodeInfoView(node: node)
-                .frame(minWidth: 230, maxWidth: 250)
+                .frame(minWidth: 230, maxWidth: 300)
         } else {
             Text("No node selected.")
-                .frame(minWidth: 230, maxWidth: 250)
+                .frame(minWidth: 230, maxWidth: 300)
         }
     }
 

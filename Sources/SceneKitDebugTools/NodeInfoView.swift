@@ -15,7 +15,6 @@ public struct NodeInfoView: View {
     public var body: some View {
         VStack {
             Text("Name: \(node.wrappedNode.name ?? ""), children: \(node.wrappedNode.childNodes.count)")
-            Text("\(node.wrappedNode.debugDescription)")
 
             Text("Position").bold()
             Simd3View(simdValue: node.wrappedNode.simdPosition)
