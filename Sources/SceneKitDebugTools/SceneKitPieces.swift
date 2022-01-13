@@ -77,6 +77,16 @@ public func headingIndicator() -> SCNNode {
     greenRingGeometry.pipeSegmentCount = 8
     greenRingGeometry.materials = [material(red: 0.1, green: 1, blue: 0.1, alpha: 1)]
 
+    let lowresCyl = SCNCylinder(radius: 0.02, height: 0.5)
+    lowresCyl.radialSegmentCount = 8
+    lowresCyl.heightSegmentCount = 1
+    lowresCyl.materials = [material(red: 1.0, green: 0.1, blue: 0.1, alpha: 1)]
+
+    let crosshairCyl = SCNCylinder(radius: 0.02, height: 1)
+    crosshairCyl.radialSegmentCount = 8
+    crosshairCyl.heightSegmentCount = 1
+    crosshairCyl.materials = [material(red: 0, green: 0, blue: 0, alpha: 1)]
+
     let basering = SCNNode(geometry: greenRingGeometry)
     basering.name = "headingIndicator"
     // green = torus in direction around Y axis - aligned with green heading indicator, affected by yaw
@@ -97,5 +107,21 @@ public func headingIndicator() -> SCNNode {
     directionCone.geometry?.materials = [material(red: 0.1, green: 1.0, blue: 0.1, alpha: 1)]
     directionCone.simdPosition = simd_float3(x: 0, y: 0.25, z: 0)
     basering.addChildNode(directionCone)
+
+    let crosshair1 = SCNNode(geometry: crosshairCyl)
+    crosshair1.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundXAxisTransform(angle: Float.pi / 2))
+    crosshair1.simdPosition = simd_float3(x: 0, y: 0.05, z: 0)
+    basering.addChildNode(crosshair1)
+
+    let crosshair2 = SCNNode(geometry: crosshairCyl)
+    crosshair2.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundZAxisTransform(angle: Float.pi / 2))
+    crosshair2.simdPosition = simd_float3(x: 0, y: 0.05, z: 0)
+    basering.addChildNode(crosshair2)
+
+    let upIndicator = SCNNode(geometry: lowresCyl)
+    upIndicator.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundXAxisTransform(angle: Float.pi / 2))
+    upIndicator.simdPosition = simd_float3(x: 0, y: 0.1, z: 0.25)
+    basering.addChildNode(upIndicator)
+
     return basering
 }
