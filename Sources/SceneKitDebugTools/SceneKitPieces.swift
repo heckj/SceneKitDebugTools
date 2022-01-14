@@ -6,6 +6,8 @@
 //
 
 import SceneKit
+import simd
+import SwiftUI
 
 func degreesToRadians(_ value: Double) -> Float {
     Float(value * .pi / 180.0)
@@ -19,6 +21,52 @@ func material(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> SC
     let material = SCNMaterial()
     material.diffuse.contents = CGColor(red: red, green: green, blue: blue, alpha: alpha)
     return material
+}
+
+extension SCNVector3 {
+    var simd_float3: simd_float3 {
+        simd.simd_float3(x: Float(x), y: Float(y), z: Float(z))
+    }
+}
+
+public func directionalFin(material: SCNMaterial) -> SCNNode {
+    let positions: [SCNVector3] = [
+        SCNVector3(x: 0.05, y: 0, z: 0),
+        SCNVector3(x: -0.05, y: 0, z: 0),
+        SCNVector3(x: 0, y: 1, z: 0),
+        SCNVector3(x: 0, y: 0, z: 0.5),
+    ]
+    let indices: [[UInt32]] = [
+        [2, 1, 0],
+        [3, 2, 0],
+        [3, 1, 2],
+        [1, 3, 0],
+    ]
+
+    // compute the normals based on the cross-product of the
+    // vertices in the triangle.
+    var normals: [SCNVector3] = []
+    for indexset in indices {
+        let a = positions[Int(indexset[0])].simd_float3
+        let b = positions[Int(indexset[1])].simd_float3
+        let c = positions[Int(indexset[2])].simd_float3
+        let normal = SCNVector3(simd.normalize(simd.cross(a - c, b - c)))
+        normals.append(normal)
+    }
+    // NOTE(heckj): It's visible, but I suspect I'm not setting the correct
+    // normals for the vertices. I may have some clock-wise/counter-clockwise
+    // issues and directional normals screwed up here.
+    let sources = [
+        SCNGeometrySource(vertices: positions),
+        SCNGeometrySource(normals: normals),
+    ]
+    let g = SCNGeometry(sources: sources,
+                        elements: indices.map { indices in
+                            SCNGeometryElement(indices: indices, primitiveType: .triangles)
+                        })
+    g.materials = [material]
+
+    return SCNNode(geometry: g)
 }
 
 /// Returns a SceneKit node that provides a visual plane, axis references, and an optional grid to display scale.
@@ -118,10 +166,34 @@ public func headingIndicator() -> SCNNode {
     crosshair2.simdPosition = simd_float3(x: 0, y: 0.05, z: 0)
     basering.addChildNode(crosshair2)
 
-    let upIndicator = SCNNode(geometry: lowresCyl)
-    upIndicator.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundXAxisTransform(angle: Float.pi / 2))
-    upIndicator.simdPosition = simd_float3(x: 0, y: 0.1, z: 0.25)
-    basering.addChildNode(upIndicator)
-
+    basering.addChildNode(directionalFin(material: material(red: 1.0, green: 0, blue: 0, alpha: 1.0)))
     return basering
+}
+
+struct LocalSceneView_Previews: PreviewProvider {
+    static func generateExampleScene() -> SCNScene {
+        let scene = SCNScene()
+        // create and add a camera to the scene
+        let cameraNode = SCNNode()
+        cameraNode.name = "camera"
+        cameraNode.camera = SCNCamera()
+        scene.rootNode.addChildNode(cameraNode)
+
+        // place the camera
+        cameraNode.position = SCNVector3(x: -1.5, y: 1, z: 3)
+        cameraNode.simdLook(at: simd_float3(x: 0, y: 0, z: 0))
+
+        // set up debug/sizing flooring
+        scene.rootNode.addChildNode(debugFlooring())
+        scene.rootNode.addChildNode(headingIndicator())
+
+        return scene
+    }
+
+    static var previews: some View {
+        SceneView(
+            scene: generateExampleScene(),
+            options: [.allowsCameraControl, .autoenablesDefaultLighting]
+        )
+    }
 }
