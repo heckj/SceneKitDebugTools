@@ -140,12 +140,12 @@ public func headingIndicator() -> SCNNode {
     // green = torus in direction around Y axis - aligned with green heading indicator, affected by yaw
 
     let ring2 = SCNNode(geometry: redRingGeometry)
-    let ring2rotationTransform = rotationAroundXAxisTransform(angle: Float.pi / 2)
+    let ring2rotationTransform = rotationAroundXAxisTransform(angle: Angle(degrees: 90))
     ring2.simdTransform = matrix_multiply(matrix_identity_float4x4, ring2rotationTransform)
     // red = torus in direction around X axis - affected by pitch
 
     let ring3 = SCNNode(geometry: blueRingGeometry)
-    let ring3rotationTransform = rotationAroundZAxisTransform(angle: Float.pi / 2)
+    let ring3rotationTransform = rotationAroundZAxisTransform(angle: Angle(degrees: 90))
     ring3.simdTransform = matrix_multiply(matrix_identity_float4x4, ring3rotationTransform)
     // blue = torus in direction around Z axis - affected by roll
     basering.addChildNode(ring2)
@@ -157,12 +157,12 @@ public func headingIndicator() -> SCNNode {
     basering.addChildNode(directionCone)
 
     let crosshair1 = SCNNode(geometry: crosshairCyl)
-    crosshair1.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundXAxisTransform(angle: Float.pi / 2))
+    crosshair1.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundXAxisTransform(angle: Angle(degrees: 90)))
     crosshair1.simdPosition = simd_float3(x: 0, y: 0.05, z: 0)
     basering.addChildNode(crosshair1)
 
     let crosshair2 = SCNNode(geometry: crosshairCyl)
-    crosshair2.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundZAxisTransform(angle: Float.pi / 2))
+    crosshair2.simdTransform = matrix_multiply(matrix_identity_float4x4, rotationAroundZAxisTransform(angle: Angle(degrees: 90)))
     crosshair2.simdPosition = simd_float3(x: 0, y: 0.05, z: 0)
     basering.addChildNode(crosshair2)
 

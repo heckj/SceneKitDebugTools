@@ -6,6 +6,7 @@
 
 import Foundation
 import simd
+import SwiftUI // for Angle
 
 /// Creates a 3D translation transform that scales by the values you provide.
 /// - Parameters:
@@ -40,10 +41,10 @@ func scalingTransform(x: Float, y: Float, z: Float) -> simd_float4x4 {
 /// Creates a 3D rotation transform that rotates around the Z axis by the angle that you provide
 /// - Parameter angle: The amount (in radians) to rotate around the Z axis.
 /// - Returns: A Z-axis rotation transform.
-func rotationAroundZAxisTransform(angle: Float) -> simd_float4x4 {
+func rotationAroundZAxisTransform(angle: Angle) -> simd_float4x4 {
     simd_float4x4(
-        SIMD4<Float>(cos(angle), sin(angle), 0, 0),
-        SIMD4<Float>(-sin(angle), cos(angle), 0, 0),
+        SIMD4<Float>(cos(Float(angle.radians)), sin(Float(angle.radians)), 0, 0),
+        SIMD4<Float>(-Float(sin(angle.radians)), cos(Float(angle.radians)), 0, 0),
         SIMD4<Float>(0, 0, 1, 0),
         SIMD4<Float>(0, 0, 0, 1)
     )
@@ -52,11 +53,11 @@ func rotationAroundZAxisTransform(angle: Float) -> simd_float4x4 {
 /// Creates a 3D rotation transform that rotates around the X axis by the angle that you provide
 /// - Parameter angle: The amount (in radians) to rotate around the X axis.
 /// - Returns: A X-axis rotation transform.
-func rotationAroundXAxisTransform(angle: Float) -> simd_float4x4 {
+func rotationAroundXAxisTransform(angle: Angle) -> simd_float4x4 {
     simd_float4x4(
         SIMD4<Float>(1, 0, 0, 0),
-        SIMD4<Float>(0, cos(angle), sin(angle), 0),
-        SIMD4<Float>(0, -sin(angle), cos(angle), 0),
+        SIMD4<Float>(0, cos(Float(angle.radians)), sin(Float(angle.radians)), 0),
+        SIMD4<Float>(0, -Float(sin(angle.radians)), cos(Float(angle.radians)), 0),
         SIMD4<Float>(0, 0, 0, 1)
     )
 }
@@ -64,11 +65,11 @@ func rotationAroundXAxisTransform(angle: Float) -> simd_float4x4 {
 /// Creates a 3D rotation transform that rotates around the Y axis by the angle that you provide
 /// - Parameter angle: The amount (in radians) to rotate around the Y axis.
 /// - Returns: A Y-axis rotation transform.
-func rotationAroundYAxisTransform(angle: Float) -> simd_float4x4 {
+func rotationAroundYAxisTransform(angle: Angle) -> simd_float4x4 {
     simd_float4x4(
-        SIMD4<Float>(cos(angle), 0, -sin(angle), 0),
+        SIMD4<Float>(cos(Float(angle.radians)), 0, -sin(Float(angle.radians)), 0),
         SIMD4<Float>(0, 1, 0, 0),
-        SIMD4<Float>(sin(angle), 0, cos(angle), 0),
+        SIMD4<Float>(sin(Float(angle.radians)), 0, cos(Float(angle.radians)), 0),
         SIMD4<Float>(0, 0, 0, 1)
     )
 }
