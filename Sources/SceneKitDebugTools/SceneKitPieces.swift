@@ -81,20 +81,6 @@ public func debugFlooring(grid: Bool = true) -> SCNNode {
     let dot3D = SCNBox(width: 0.05, height: 0.05, length: 0.05, chamferRadius: 0)
     dot3D.materials = axisMaterials
 
-    let lowresCyl = SCNCylinder(radius: 0.01, height: 10)
-    lowresCyl.radialSegmentCount = 8
-    lowresCyl.heightSegmentCount = 1
-    lowresCyl.materials = axisMaterials
-
-    let zaxis = SCNNode(geometry: lowresCyl)
-    flooring.addChildNode(zaxis)
-    let xaxis = SCNNode(geometry: lowresCyl)
-    xaxis.simdEulerAngles = simd_float3(x: 0, y: 0, z: degreesToRadians(90))
-    flooring.addChildNode(xaxis)
-    let yaxis = SCNNode(geometry: lowresCyl)
-    yaxis.simdEulerAngles = simd_float3(x: degreesToRadians(90), y: 0, z: 0)
-    flooring.addChildNode(yaxis)
-
     if grid {
         let loc: [Float] = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
         for i in loc {
@@ -106,6 +92,81 @@ public func debugFlooring(grid: Bool = true) -> SCNNode {
         }
     }
     return flooring
+}
+
+/// Returns a SceneKit node that provides a visual plane, axis references, and an optional grid to display scale.
+/// - Parameter grid: A Boolean value that indicates whether to display the grid.
+/// - Parameter length: <#length description#>
+/// - Parameter labels: <#labels description#>
+/// - Returns: <#description#>
+public func axis(length: Int = 10, labels: Bool = true) -> SCNNode {
+    let baseNode = SCNNode()
+
+    let axisMaterials = [material(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)]
+    let lowresCyl = SCNCylinder(radius: 0.01, height: CGFloat(length))
+    lowresCyl.radialSegmentCount = 8
+    lowresCyl.heightSegmentCount = 1
+    lowresCyl.materials = axisMaterials
+
+    let zaxis = SCNNode(geometry: lowresCyl)
+    baseNode.addChildNode(zaxis)
+
+    let xaxis = SCNNode(geometry: lowresCyl)
+    xaxis.simdEulerAngles = simd_float3(x: 0, y: 0, z: degreesToRadians(90))
+    baseNode.addChildNode(xaxis)
+
+    let yaxis = SCNNode(geometry: lowresCyl)
+    yaxis.simdEulerAngles = simd_float3(x: degreesToRadians(90), y: 0, z: 0)
+    baseNode.addChildNode(yaxis)
+
+    if labels {
+        let scaleDown: Float = 0.01
+
+        let plusX = SCNNode(geometry: SCNText(string: "+X", extrusionDepth: 1.0))
+        plusX.geometry?.materials = axisMaterials
+        plusX.simdScale = simd_float3(scaleDown, scaleDown, scaleDown)
+        let maxSizePlusX = Float(max(plusX.boundingBox.max.x - plusX.boundingBox.min.x,
+                                     plusX.boundingBox.max.y - plusX.boundingBox.min.y,
+                                     plusX.boundingBox.max.z - plusX.boundingBox.min.z)) * scaleDown
+        plusX.simdPosition = simd_float3(x: Float(length / 2) - maxSizePlusX, y: 0, z: 0)
+        baseNode.addChildNode(plusX)
+
+        let minusX = SCNNode(geometry: SCNText(string: "-X", extrusionDepth: 1.0))
+        minusX.geometry?.materials = axisMaterials
+        minusX.simdScale = simd_float3(scaleDown, scaleDown, scaleDown)
+        let maxSizeMinusX = Float(max(minusX.boundingBox.max.x - minusX.boundingBox.min.x,
+                                      minusX.boundingBox.max.y - minusX.boundingBox.min.y,
+                                      minusX.boundingBox.max.z - minusX.boundingBox.min.z)) * scaleDown
+        minusX.simdPosition = simd_float3(x: Float(length / 2) + maxSizeMinusX, y: 0, z: 0)
+        minusX.simdPosition = simd_float3(x: Float(-length / 2), y: 0, z: 0)
+        baseNode.addChildNode(minusX)
+
+        let plusY = SCNNode(geometry: SCNText(string: "+Y", extrusionDepth: 1.0))
+        plusY.geometry?.materials = axisMaterials
+        plusY.simdScale = simd_float3(scaleDown, scaleDown, scaleDown)
+        plusY.simdPosition = simd_float3(x: 0, y: Float(length / 2), z: 0)
+        baseNode.addChildNode(plusY)
+
+        let minusY = SCNNode(geometry: SCNText(string: "-Y", extrusionDepth: 1.0))
+        minusY.geometry?.materials = axisMaterials
+        minusY.simdScale = simd_float3(scaleDown, scaleDown, scaleDown)
+        minusY.simdPosition = simd_float3(x: 0, y: Float(-length / 2), z: 0)
+        baseNode.addChildNode(minusY)
+
+        let plusZ = SCNNode(geometry: SCNText(string: "+Z", extrusionDepth: 1.0))
+        plusZ.geometry?.materials = axisMaterials
+        plusZ.simdScale = simd_float3(scaleDown, scaleDown, scaleDown)
+        plusZ.simdPosition = simd_float3(x: 0, y: 0, z: Float(length / 2))
+        baseNode.addChildNode(plusZ)
+
+        let minusZ = SCNNode(geometry: SCNText(string: "-Z", extrusionDepth: 1.0))
+        minusZ.geometry?.materials = axisMaterials
+        minusZ.simdScale = simd_float3(scaleDown, scaleDown, scaleDown)
+        minusZ.simdPosition = simd_float3(x: 0, y: 0, z: Float(-length / 2))
+        baseNode.addChildNode(minusZ)
+    }
+
+    return baseNode
 }
 
 /// Returns a SceneKit node that provides a heading indicator.
@@ -180,11 +241,12 @@ struct LocalSceneView_Previews: PreviewProvider {
         scene.rootNode.addChildNode(cameraNode)
 
         // place the camera
-        cameraNode.position = SCNVector3(x: -1.5, y: 1, z: 3)
+        cameraNode.position = SCNVector3(x: 3, y: 2, z: 7)
         cameraNode.simdLook(at: simd_float3(x: 0, y: 0, z: 0))
 
         // set up debug/sizing flooring
-        scene.rootNode.addChildNode(debugFlooring())
+        scene.rootNode.addChildNode(debugFlooring(grid: true))
+        scene.rootNode.addChildNode(axis(length: 5))
         scene.rootNode.addChildNode(headingIndicator())
 
         return scene
