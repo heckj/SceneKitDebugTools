@@ -232,7 +232,7 @@ public func headingIndicator() -> SCNNode {
 }
 
 struct LocalSceneView_Previews: PreviewProvider {
-    static func generateExampleScene() -> SCNScene {
+    static func generateExampleScene() -> (SCNScene, SCNNode) {
         let scene = SCNScene()
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -241,21 +241,66 @@ struct LocalSceneView_Previews: PreviewProvider {
         scene.rootNode.addChildNode(cameraNode)
 
         // place the camera
-        cameraNode.position = SCNVector3(x: 3, y: 2, z: 7)
+        cameraNode.position = SCNVector3(x: 3, y: 2, z: 5)
         cameraNode.simdLook(at: simd_float3(x: 0, y: 0, z: 0))
 
         // set up debug/sizing flooring
         scene.rootNode.addChildNode(debugFlooring(grid: true))
-        scene.rootNode.addChildNode(axis(length: 5))
-        scene.rootNode.addChildNode(headingIndicator())
+        scene.rootNode.addChildNode(axis(length: 5, labels: true))
+        
+        let headingIndicator = headingIndicator()
+        scene.rootNode.addChildNode(headingIndicator)
 
-        return scene
+        return (scene, headingIndicator)
+    }
+    public struct TestPiecesView: View {
+        let scene: SCNScene
+        let headingIndicator: SCNNode
+        @State private var angle: String = ""
+        @State private var angleValue: Float = 0
+        @State private var axis: simd_float3 = simd_float3(x: 0, y: 0, z: 0)
+        public var body: some View {
+            VStack {
+                HStack {
+                    Button("X") {
+                        axis = simd_float3(x: 1, y: 0, z: 0)
+                    }
+                    Button("Y") {
+                        axis = simd_float3(x: 0, y: 1, z: 0)
+                    }
+                    Button("Z") {
+                        axis = simd_float3(x: 0, y: 0, z: 1)
+                    }
+                    Button("XZ") {
+                        // IMPORTANT: Normalize the axis!!! Otherwise it starts to distort as it rotates...
+                        axis = simd_normalize(simd_float3(x: 1, y: 0, z: 1))
+                    }
+                    Text("angle: \(angleValue.formatted(.number.precision(.significantDigits(2))))")
+                    TextField("radians", text: $angle)
+                        .onSubmit {
+                            if let someValue = Float(angle) {
+                                angleValue = someValue
+                                SCNTransaction.begin()
+                                SCNTransaction.animationDuration = 0.4
+                                headingIndicator.simdOrientation = simd_quatf(angle: angleValue, axis: axis)
+                                SCNTransaction.commit()
+                            }
+                        }
+                }
+                SceneView(
+                    scene: scene,
+                    options: [.allowsCameraControl, .autoenablesDefaultLighting]
+                )
+            }
+        }
+
+        public init(sceneSet: (SCNScene, SCNNode)) {
+            self.scene = sceneSet.0
+            self.headingIndicator = sceneSet.1
+        }
     }
 
     static var previews: some View {
-        SceneView(
-            scene: generateExampleScene(),
-            options: [.allowsCameraControl, .autoenablesDefaultLighting]
-        )
+        TestPiecesView(sceneSet: generateExampleScene())
     }
 }
