@@ -38,8 +38,16 @@ public func directionalFin(material: SCNMaterial) -> SCNNode {
     ]
     let indices: [[UInt32]] = [
         [2, 1, 0],
+        [2, 1, 0],
+        [2, 1, 0],
+        [3, 2, 0],
+        [3, 2, 0],
         [3, 2, 0],
         [3, 1, 2],
+        [3, 1, 2],
+        [3, 1, 2],
+        [1, 3, 0],
+        [1, 3, 0],
         [1, 3, 0],
     ]
 
@@ -52,10 +60,9 @@ public func directionalFin(material: SCNMaterial) -> SCNNode {
         let c = positions[Int(indexset[2])].simd_float3
         let normal = SCNVector3(simd.normalize(simd.cross(a - c, b - c)))
         normals.append(normal)
+        normals.append(normal)
+        normals.append(normal)
     }
-    // NOTE(heckj): It's visible, but I suspect I'm not setting the correct
-    // normals for the vertices. I may have some clock-wise/counter-clockwise
-    // issues and directional normals screwed up here.
     let sources = [
         SCNGeometrySource(vertices: positions),
         SCNGeometrySource(normals: normals),
