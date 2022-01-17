@@ -254,18 +254,19 @@ struct LocalSceneView_Previews: PreviewProvider {
         // set up debug/sizing flooring
         scene.rootNode.addChildNode(debugFlooring(grid: true))
         scene.rootNode.addChildNode(axis(length: 5, labels: true))
-        
+
         let headingIndicator = headingIndicator()
         scene.rootNode.addChildNode(headingIndicator)
 
         return (scene, headingIndicator)
     }
+
     public struct TestPiecesView: View {
         let scene: SCNScene
         let headingIndicator: SCNNode
         @State private var angle: String = ""
         @State private var angleValue: Float = 0
-        @State private var axis: simd_float3 = simd_float3(x: 0, y: 0, z: 0)
+        @State private var axis: simd_float3 = .init(x: 0, y: 0, z: 0)
         public var body: some View {
             VStack {
                 HStack {
@@ -302,8 +303,8 @@ struct LocalSceneView_Previews: PreviewProvider {
         }
 
         public init(sceneSet: (SCNScene, SCNNode)) {
-            self.scene = sceneSet.0
-            self.headingIndicator = sceneSet.1
+            scene = sceneSet.0
+            headingIndicator = sceneSet.1
         }
     }
 
