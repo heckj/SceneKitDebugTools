@@ -8,7 +8,10 @@
 import SceneKit
 import SwiftUI
 
-/// Provides a SceneKit scene and node overview that supports searching for, and highlighting, named nodes.
+/// Provides a searchable view that supports displaying nodes from within a SceneKit scene you provide.
+///
+/// The person using the view can search for SceneKit nodes by name.
+/// If found it will be temporarily highlighted in the scene, and the information about the node displayed below the search area.
 public struct SearchableSceneInfoView: View {
     let scene: SCNScene
     @State private var node: SCNNode
@@ -70,7 +73,9 @@ public struct SearchableSceneInfoView: View {
             NodeInfoView(node: node)
         }
     }
-
+    
+    /// Creates a new searchable scene view.
+    /// - Parameter scene: The scene to search and update when nodes are found.
     public init(scene: SCNScene) {
         self.scene = scene
         node = scene.rootNode

@@ -1,5 +1,5 @@
 //
-//  SearchableSceneInfoView.swift
+//  SceneInfoView.swift
 //
 //
 //  Created by Joseph Heck on 1/8/22.

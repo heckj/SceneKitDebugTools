@@ -1,5 +1,5 @@
 //
-//  SceneInfoView.swift
+//  NodeInfoView.swift
 //
 //
 //  Created by Joseph Heck on 1/8/22.
@@ -8,7 +8,7 @@
 import SceneKit
 import SwiftUI
 
-/// A view that displays a summary of the rotation and positional properties of a scenekit node.
+/// A view that displays a summary of the rotation and positional properties of a SceneKit node.
 public struct NodeInfoView: View {
     @ObservedObject var node: ObservableSCNNode
 

@@ -8,7 +8,7 @@
 import SceneKit
 import SwiftUI
 
-/// A view that provides textually oriented overviews on the left and a 3D view on the right.
+/// A debugging view that provides textually oriented overviews of a node you provide on the left and a SceneKit 3D view of the scene you provide on the right.
 public struct DebugSceneView: View {
     let scene: SCNScene
     let node: SCNNode?
@@ -26,6 +26,10 @@ public struct DebugSceneView: View {
         }
     }
 
+    /// Creates a new debugging view with the scene you provide, and optionally a node to highlight.
+    /// - Parameters:
+    ///   - scene: The scene to display.
+    ///   - node: The node to provide information about in the left panel.
     public init(scene: SCNScene, node: SCNNode?) {
         self.scene = scene
         self.node = node
