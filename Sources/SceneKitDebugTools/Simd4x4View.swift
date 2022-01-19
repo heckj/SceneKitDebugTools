@@ -12,65 +12,73 @@ public struct Simd4x4View: View {
     let simdValue: simd_float4x4
     public var body: some View {
         HStack {
-            VStack {
-                Text(simdValue.columns.0.x,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.0.y,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.0.z,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.0.w,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+            HStack {
+                VStack {
+                    Text(simdValue.columns.0.x,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.0.y,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.0.z,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.0.w,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                }
+                VStack {
+                    Text(simdValue.columns.1.x,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.1.y,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.1.z,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.1.w,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                }
+                VStack {
+                    Text(simdValue.columns.2.x,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.2.y,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.2.z,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.2.w,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                }
+                VStack {
+                    Text(simdValue.columns.3.x,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.3.y,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.3.z,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                    Text(simdValue.columns.3.w,
+                         format: .number.precision(
+                             .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                }
             }
-            VStack {
-                Text(simdValue.columns.1.x,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.1.y,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.1.z,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.1.w,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-            }
-            VStack {
-                Text(simdValue.columns.2.x,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.2.y,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.2.z,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.2.w,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-            }
-            VStack {
-                Text(simdValue.columns.3.x,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.3.y,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.3.z,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-                Text(simdValue.columns.3.w,
-                     format: .number.precision(
-                         .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+            .padding(2)
+            .border(.blue)
+
+            Button {
+                writeStringToPasteboard(simdValue.codetext)
+            } label: {
+                Image(systemName: "doc.on.clipboard")
             }
         }
-        .padding(2)
-        .border(.blue)
     }
 
     public init(simdValue: simd_float4x4) {

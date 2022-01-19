@@ -73,7 +73,7 @@ public struct SearchableSceneInfoView: View {
             NodeInfoView(node: node)
         }
     }
-    
+
     /// Creates a new searchable scene view.
     /// - Parameter scene: The scene to search and update when nodes are found.
     public init(scene: SCNScene) {

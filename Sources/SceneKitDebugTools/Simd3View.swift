@@ -13,15 +13,23 @@ public struct Simd3View: View {
 
     public var body: some View {
         HStack {
-            Text(simdValue.x, format: .number.precision(
-                .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-            Text(simdValue.y, format: .number.precision(
-                .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
-            Text(simdValue.z, format: .number.precision(
-                .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+            HStack {
+                Text(simdValue.x, format: .number.precision(
+                    .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                Text(simdValue.y, format: .number.precision(
+                    .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+                Text(simdValue.z, format: .number.precision(
+                    .integerAndFractionLength(integerLimits: 1 ... 2, fractionLimits: 0 ... 3)))
+            }
+            .padding(2)
+            .border(.blue)
+
+            Button {
+                writeStringToPasteboard(simdValue.codetext)
+            } label: {
+                Image(systemName: "doc.on.clipboard")
+            }
         }
-        .padding(2)
-        .border(.blue)
     }
 
     public init(simdValue: simd_float3) {
