@@ -15,7 +15,7 @@ public extension simd_float4x4 {
         result += "    simd_float4(\(c1.x), \(c1.y), \(c1.z), \(c1.w)),\n"
         result += "    simd_float4(\(c2.x), \(c2.y), \(c2.z), \(c2.w)),\n"
         result += "    simd_float4(\(c3.x), \(c3.y), \(c3.z), \(c3.w)),\n"
-        result += "    simd_float4(\(c4.x), \(c4.y), \(c4.z), \(c4.w)),\n"
+        result += "    simd_float4(\(c4.x), \(c4.y), \(c4.z), \(c4.w))\n"
         result += ")\n"
         return result
     }
