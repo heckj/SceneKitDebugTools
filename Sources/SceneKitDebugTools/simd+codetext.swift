@@ -12,10 +12,10 @@ public extension simd_float4x4 {
     var codetext: String {
         var result = "simd_float4x4(\n"
         let (c1, c2, c3, c4) = columns
-        result += "    simd_float4(\(c1.x), \(c2.x), \(c3.x), \(c4.x)),\n"
-        result += "    simd_float4(\(c1.y), \(c2.y), \(c3.y), \(c4.y)),\n"
-        result += "    simd_float4(\(c1.z), \(c2.z), \(c3.z), \(c4.z)),\n"
-        result += "    simd_float4(\(c1.w), \(c2.w), \(c3.w), \(c4.w))\n"
+        result += "    simd_float4(\(c1.x), \(c1.y), \(c1.z), \(c1.w)),\n"
+        result += "    simd_float4(\(c2.x), \(c2.y), \(c2.z), \(c2.w)),\n"
+        result += "    simd_float4(\(c3.x), \(c3.y), \(c3.z), \(c3.w)),\n"
+        result += "    simd_float4(\(c4.x), \(c4.y), \(c4.z), \(c4.w)),\n"
         result += ")\n"
         return result
     }

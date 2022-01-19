@@ -87,8 +87,17 @@ public struct Simd4x4View: View {
 }
 
 struct Simd4x4View_Previews: PreviewProvider {
-    static let example4x4 = simd_float4x4(simd_quatf(angle: Float.pi / 3, axis: simd_float3(1, 1, 0)))
+    static let rotation4x4 = simd_float4x4(simd_quatf(angle: Float.pi / 3, axis: simd_float3(1, 1, 0)))
+    static let shifted4x4 = matrix_multiply(matrix_identity_float4x4, translationTransform(x: 0, y: 2, z: -2))
+    static let move_then_rotate = matrix_multiply(shifted4x4, rotation4x4)
+    static let rotate_then_move = matrix_multiply(rotation4x4, shifted4x4)
     static var previews: some View {
-        Simd4x4View(simdValue: example4x4)
+        VStack {
+            Simd4x4View(simdValue: rotation4x4)
+            Simd4x4View(simdValue: shifted4x4)
+            Simd4x4View(simdValue: move_then_rotate)
+            Simd4x4View(simdValue: rotate_then_move)
+            Text(move_then_rotate.codetext)
+        }
     }
 }

@@ -13,10 +13,15 @@ public struct QuaternionView: View {
     let quat: simd_quatf
     public var body: some View {
         VStack {
-            Simd4View(simdValue: quat.vector)
+            HStack {
+                Text("Quat:")
+                Simd4View(simdValue: quat.vector)
+            }
             HStack {
                 Text("Angle:")
                 AngleView(angle: Angle(radians: Double(quat.angle)))
+            }
+            HStack {
                 Text("Axis:")
                 Simd3View(simdValue: quat.axis)
             }

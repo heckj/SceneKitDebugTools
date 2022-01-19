@@ -19,15 +19,20 @@ public struct NodeInfoView: View {
             Text("Position").bold()
             Simd3View(simdValue: node.wrappedNode.simdPosition)
 
-            Text("Rotation").bold()
             HStack {
-                Simd4View(simdValue: node.wrappedNode.simdRotation)
-                EulerAngleView(eulerAngles: node.wrappedNode.simdEulerAngles)
+                VStack {
+                    Text("Rotation").bold()
+                    Simd4View(simdValue: node.wrappedNode.simdRotation)
+                }
                 VStack {
                     Text("pivot").bold()
                     Simd4x4View(simdValue: node.wrappedNode.simdPivot)
                 }
             }
+            HStack {
+                EulerAngleView(eulerAngles: node.wrappedNode.simdEulerAngles)
+            }
+
             Text("Orientation").bold()
             QuaternionView(quat: node.wrappedNode.simdOrientation)
 
