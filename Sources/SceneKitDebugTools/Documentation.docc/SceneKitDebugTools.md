@@ -16,9 +16,7 @@ The components views that make up that view are also available for use, to remix
 
 ### SceneKit Nodes
 
-- ``debugFlooring(grid:)``
-- ``headingIndicator()``
-- ``axis(length:labels:)``
+- ``DebugNodes``
 
 ### Supplementary Views for SceneKit
 

@@ -50,8 +50,8 @@ struct DebugSceneView_Previews: PreviewProvider {
         cameraNode.simdLook(at: simd_float3(x: 0, y: 0, z: 0))
 
         // set up debug/sizing flooring
-        scene.rootNode.addChildNode(debugFlooring())
-        scene.rootNode.addChildNode(headingIndicator())
+        scene.rootNode.addChildNode(DebugNodes.debugFlooring())
+        scene.rootNode.addChildNode(DebugNodes.headingIndicator())
 
         return scene
     }
