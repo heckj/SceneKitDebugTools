@@ -1,6 +1,6 @@
 //
 //  SceneKitHelpers.swift
-//  X5336
+//
 //
 //  Created by Joseph Heck on 1/8/22.
 //
@@ -24,12 +24,13 @@ func material(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> SC
 }
 
 extension SCNVector3 {
+    /// The simd_float3 representation that corresponds to this vector.
     var simd_float3: simd_float3 {
         simd.simd_float3(x: Float(x), y: Float(y), z: Float(z))
     }
 }
 
-public func directionalFin(material: SCNMaterial) -> SCNNode {
+func directionalFin(material: SCNMaterial) -> SCNNode {
     let positions: [SCNVector3] = [
         SCNVector3(x: 0.05, y: 0, z: 0),
         SCNVector3(x: -0.05, y: 0, z: 0),
@@ -78,6 +79,8 @@ public func directionalFin(material: SCNMaterial) -> SCNNode {
 
 /// Returns a SceneKit node that provides a visual plane, axis references, and an optional grid to display scale.
 /// - Parameter grid: A Boolean value that indicates whether to display the grid.
+///
+/// ![A screenshot of the debug flooring with the grid enabled.](debug_flooring.png)
 public func debugFlooring(grid: Bool = true) -> SCNNode {
     let flooring = SCNNode(geometry: SCNPlane(width: 10, height: 10))
     flooring.geometry?.materials = [material(red: 0.1, green: 0.7, blue: 0.1, alpha: 0.5)]
@@ -103,9 +106,11 @@ public func debugFlooring(grid: Bool = true) -> SCNNode {
 
 /// Returns a SceneKit node that provides a visual plane, axis references, and an optional grid to display scale.
 /// - Parameter grid: A Boolean value that indicates whether to display the grid.
-/// - Parameter length: <#length description#>
-/// - Parameter labels: <#labels description#>
-/// - Returns: <#description#>
+/// - Parameter length: The length of the axis lines.
+/// - Parameter labels: A Boolean value that indicates whether to display the labels.
+/// - Returns: An SCNNode that displays the coordinate axis at the origin point.
+///
+/// ![A screenshot of the axis indicator](axis.png)
 public func axis(length: Int = 10, labels: Bool = true) -> SCNNode {
     let baseNode = SCNNode()
 
@@ -177,6 +182,8 @@ public func axis(length: Int = 10, labels: Bool = true) -> SCNNode {
 }
 
 /// Returns a SceneKit node that provides a heading indicator.
+///
+/// ![A screenshot of the directional heading indicator](heading_indicator.png)
 public func headingIndicator() -> SCNNode {
     let redRingGeometry = SCNTorus(ringRadius: 0.5, pipeRadius: 0.01)
     redRingGeometry.ringSegmentCount = 36
@@ -248,7 +255,7 @@ struct LocalSceneView_Previews: PreviewProvider {
         scene.rootNode.addChildNode(cameraNode)
 
         // place the camera
-        cameraNode.position = SCNVector3(x: 3, y: 2, z: 5)
+        cameraNode.position = SCNVector3(x: 5, y: 4, z: 7)
         cameraNode.simdLook(at: simd_float3(x: 0, y: 0, z: 0))
 
         // set up debug/sizing flooring

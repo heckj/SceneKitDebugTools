@@ -4,7 +4,8 @@ A collection of SwiftUI views that display elements common to SceneKit.
 
 ## Overview
 
-The top-level view (``DebugSceneView``) displays an overview of the scene, details about an `SCNNode`, if provided, to the left of the 3D SceneKit view.
+The primary content for this library is ``DebugSceneView``, which provides a SwiftUI View that includes an informational panel for an `SCNNode` instance to the left of a rendered 3D scene using SceneKit.
+The components views that make up that view are also available for use, to remix into different or additional debugging views.
 
 ## Topics
 
@@ -17,6 +18,7 @@ The top-level view (``DebugSceneView``) displays an overview of the scene, detai
 
 - ``debugFlooring(grid:)``
 - ``headingIndicator()``
+- ``axis(length:labels:)``
 
 ### Supplementary Views for SceneKit
 

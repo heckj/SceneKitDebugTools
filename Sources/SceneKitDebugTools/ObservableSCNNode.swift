@@ -21,8 +21,8 @@ public class ObservableSCNNode: ObservableObject {
         wrappedNode = node
 
         // NOTE(heckj): don't KVO wrap the .simdTransform property, as there's some
-        // wacky stuff happening in the depths of SceneKit and how it's making that
-        // available that results in an exception being thrown:
+        // wacky stuff happening in the depths of SceneKit and how it's making the
+        // .simdTransform property available that results in an exception being thrown:
         // [NSInvocation getArgument:atIndex:]: struct with unknown contents found while getting argument at index -1 (NSInvalidArgumentException)
         kvoWatcher = wrappedNode.publisher(for: \.transform).sink(receiveValue: { _ in
             self.objectWillChange.send()
