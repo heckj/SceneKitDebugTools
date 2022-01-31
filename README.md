@@ -5,3 +5,5 @@
 
 A collection of SwiftUI views to provide detail views about Nodes and their properties, displayed alongside or indepedently of a SceneKit scene.
 
+- [API Documentation](https://heckj.github.io/SceneKitDebugTools/documentation/scenekitdebugtools/)
+
