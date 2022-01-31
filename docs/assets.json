@@ -1,0 +1,52 @@
+{
+  "downloads" : [
+
+  ],
+  "images" : [
+    {
+      "alt" : "A screenshot of the axis indicator",
+      "identifier" : "axis.png",
+      "type" : "image",
+      "variants" : [
+        {
+          "traits" : [
+            "1x",
+            "light"
+          ],
+          "url" : "\/images\/axis.png"
+        }
+      ]
+    },
+    {
+      "alt" : "A screenshot of the debug flooring with the grid enabled.",
+      "identifier" : "debug_flooring.png",
+      "type" : "image",
+      "variants" : [
+        {
+          "traits" : [
+            "1x",
+            "light"
+          ],
+          "url" : "\/images\/debug_flooring.png"
+        }
+      ]
+    },
+    {
+      "alt" : "A screenshot of the directional heading indicator",
+      "identifier" : "heading_indicator.png",
+      "type" : "image",
+      "variants" : [
+        {
+          "traits" : [
+            "1x",
+            "light"
+          ],
+          "url" : "\/images\/heading_indicator.png"
+        }
+      ]
+    }
+  ],
+  "videos" : [
+
+  ]
+}

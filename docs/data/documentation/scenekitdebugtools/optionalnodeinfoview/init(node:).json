@@ -1,0 +1,205 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/OptionalNodeInfoView"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/OptionalNodeInfoView\/init(node:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18SceneKitDebugTools20OptionalNodeInfoViewV4nodeACSo7SCNNodeCSg_tcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "node"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "c:objc(cs)SCNNode",
+        "text" : "SCNNode"
+      },
+      {
+        "kind" : "text",
+        "text" : "?)"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SceneKitDebugTools"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(node:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "node"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "c:objc(cs)SCNNode",
+              "text" : "SCNNode"
+            },
+            {
+              "kind" : "text",
+              "text" : "?)"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/scenekitdebugtools\/optionalnodeinfoview\/init(node:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools": {
+  "abstract" : [
+    {
+      "text" : "A collection of SwiftUI views that display elements common to SceneKit.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SceneKitDebugTools",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/OptionalNodeInfoView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays a summary of the rotation and positional properties of a scenekit node if provided; otherwise, a default view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OptionalNodeInfoView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/OptionalNodeInfoView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OptionalNodeInfoView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OptionalNodeInfoView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/optionalnodeinfoview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/OptionalNodeInfoView/init(node:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "node"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)SCNNode",
+      "text" : "SCNNode"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/OptionalNodeInfoView\/init(node:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(node:)",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/optionalnodeinfoview\/init(node:)"
+}
+}
+}

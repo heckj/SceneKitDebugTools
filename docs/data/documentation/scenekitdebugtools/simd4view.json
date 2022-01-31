@@ -1,0 +1,357 @@
+{
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd four float vector.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18SceneKitDebugTools9Simd4ViewV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Simd4View"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SceneKitDebugTools"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Simd4View"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "Simd4View"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Simd4View"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/7SwiftUI4ViewP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd3View",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4x4View"
+      ],
+      "title" : "Supplementary Views for SIMD"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View\/init(simdValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View\/body"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View\/View-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/scenekitdebugtools\/simd4view"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.heckj.SceneKitDebugTools/7SwiftUI4ViewP": {
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/7SwiftUI4ViewP",
+  "title" : "SwiftUI.View",
+  "type" : "unresolvable"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools": {
+  "abstract" : [
+    {
+      "text" : "A collection of SwiftUI views that display elements common to SceneKit.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SceneKitDebugTools",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd3View": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd three float vector.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simd3View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd3View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simd3View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simd3View",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd3view"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4View": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd four float vector.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simd4View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simd4View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simd4View",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4view"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4View/View-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View\/View-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "View Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4view\/view-implementations"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4View/body": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "body"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "some"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI4ViewP",
+      "text" : "View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View\/body",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "body",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4view\/body"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4View/init(simdValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "simdValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@T@simd_float4",
+      "text" : "simd_float4"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View\/init(simdValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(simdValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4view\/init(simdvalue:)"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4x4View": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd four by four float matrix.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simd4x4View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4x4View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simd4x4View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simd4x4View",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4x4view"
+}
+}
+}

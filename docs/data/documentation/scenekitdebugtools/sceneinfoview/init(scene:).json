@@ -1,0 +1,205 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SceneInfoView"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SceneInfoView\/init(scene:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:18SceneKitDebugTools0A8InfoViewV5sceneACSo8SCNSceneC_tcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "scene"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "c:objc(cs)SCNScene",
+        "text" : "SCNScene"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SceneKitDebugTools"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(scene:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "scene"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "c:objc(cs)SCNScene",
+              "text" : "SCNScene"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/scenekitdebugtools\/sceneinfoview\/init(scene:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools": {
+  "abstract" : [
+    {
+      "text" : "A collection of SwiftUI views that display elements common to SceneKit.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SceneKitDebugTools",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/SceneInfoView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the summary properties for a SceneKit scene.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SceneInfoView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SceneInfoView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SceneInfoView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SceneInfoView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/sceneinfoview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/SceneInfoView/init(scene:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "scene"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)SCNScene",
+      "text" : "SCNScene"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SceneInfoView\/init(scene:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(scene:)",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/sceneinfoview\/init(scene:)"
+}
+}
+}

@@ -19,6 +19,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
+        // Swift-DocC Plugin - swift 5.6 ONLY (GitHhub Actions on 1/29/2022 only supports to 5.5)
         .package(name: "MeshGenerator",
                  url: "https://github.com/heckj/MeshGenerator.git", .upToNextMajor(from: "0.5.0")),
     ],

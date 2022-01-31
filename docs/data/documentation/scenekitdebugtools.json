@@ -1,0 +1,593 @@
+{
+  "abstract" : [
+    {
+      "text" : "A collection of SwiftUI views that display elements common to SceneKit.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "SceneKitDebugTools",
+    "modules" : [
+      {
+        "name" : "SceneKitDebugTools"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "SceneKitDebugTools"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The primary content for this library is ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/DebugSceneView",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", which provides a SwiftUI View that includes an informational panel for an ",
+              "type" : "text"
+            },
+            {
+              "code" : "SCNNode",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instance to the left of a rendered 3D scene using SceneKit.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The components views that make up that view are also available for use, to remix into different or additional debugging views.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/DebugSceneView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SearchableSceneInfoView"
+      ],
+      "title" : "Main Views"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/DebugNodes"
+      ],
+      "title" : "SceneKit Nodes"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SceneInfoView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/OptionalNodeInfoView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/NodeInfoView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/EulerAngleView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/AngleView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/QuaternionView",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/ObservableSCNNode"
+      ],
+      "title" : "Supplementary Views for SceneKit"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd3View",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View",
+        "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4x4View"
+      ],
+      "title" : "Supplementary Views for SIMD"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/scenekitdebugtools"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools": {
+  "abstract" : [
+    {
+      "text" : "A collection of SwiftUI views that display elements common to SceneKit.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SceneKitDebugTools",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/AngleView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for an Angle.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AngleView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/AngleView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AngleView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AngleView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/angleview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/DebugNodes": {
+  "abstract" : [
+    {
+      "text" : "A type that provides a collection of nodes for SceneKit.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DebugNodes"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/DebugNodes",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DebugNodes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugNodes",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/debugnodes"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/DebugSceneView": {
+  "abstract" : [
+    {
+      "text" : "A debugging view that provides textually oriented overviews of a node you provide on the left and a SceneKit 3D view of the scene you provide on the right.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DebugSceneView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/DebugSceneView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DebugSceneView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DebugSceneView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/debugsceneview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/EulerAngleView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a set of Euler Angles.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EulerAngleView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/EulerAngleView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EulerAngleView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EulerAngleView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/eulerangleview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/NodeInfoView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays a summary of the rotation and positional properties of a SceneKit node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NodeInfoView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/NodeInfoView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NodeInfoView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NodeInfoView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/nodeinfoview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/ObservableSCNNode": {
+  "abstract" : [
+    {
+      "text" : "A class that wraps a SceneKit node to provide an observable object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ObservableSCNNode"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/ObservableSCNNode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ObservableSCNNode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ObservableSCNNode",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/observablescnnode"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/OptionalNodeInfoView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays a summary of the rotation and positional properties of a scenekit node if provided; otherwise, a default view.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OptionalNodeInfoView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/OptionalNodeInfoView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OptionalNodeInfoView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OptionalNodeInfoView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/optionalnodeinfoview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/QuaternionView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the set of values for a quaternion rotation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "QuaternionView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/QuaternionView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "QuaternionView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "QuaternionView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/quaternionview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/SceneInfoView": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the summary properties for a SceneKit scene.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SceneInfoView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SceneInfoView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SceneInfoView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SceneInfoView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/sceneinfoview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/SearchableSceneInfoView": {
+  "abstract" : [
+    {
+      "text" : "Provides a searchable view that supports displaying nodes from within a SceneKit scene you provide.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SearchableSceneInfoView"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/SearchableSceneInfoView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SearchableSceneInfoView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SearchableSceneInfoView",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/searchablesceneinfoview"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd3View": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd three float vector.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simd3View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd3View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simd3View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simd3View",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd3view"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4View": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd four float vector.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simd4View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simd4View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simd4View",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4view"
+},
+"doc://com.github.heckj.SceneKitDebugTools/documentation/SceneKitDebugTools/Simd4x4View": {
+  "abstract" : [
+    {
+      "text" : "A view that displays the values for a simd four by four float matrix.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simd4x4View"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.heckj.SceneKitDebugTools\/documentation\/SceneKitDebugTools\/Simd4x4View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simd4x4View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simd4x4View",
+  "type" : "topic",
+  "url" : "\/documentation\/scenekitdebugtools\/simd4x4view"
+}
+}
+}

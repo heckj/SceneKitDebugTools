@@ -1,0 +1,9 @@
+{
+  "bundleDisplayName" : "SceneKitDebugTools",
+  "bundleIdentifier" : "com.github.heckj.SceneKitDebugTools",
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}
