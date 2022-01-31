@@ -8,6 +8,7 @@
 import SceneKit
 import simd
 import SwiftUI
+import MeshGenerator
 
 func degreesToRadians(_ value: Double) -> Float {
     Float(value * .pi / 180.0)
@@ -31,49 +32,24 @@ extension SCNVector3 {
 }
 
 func directionalFin(material: SCNMaterial) -> SCNNode {
-    let positions: [SCNVector3] = [
-        SCNVector3(x: 0.05, y: 0, z: 0),
-        SCNVector3(x: -0.05, y: 0, z: 0),
-        SCNVector3(x: 0, y: 1, z: 0),
-        SCNVector3(x: 0, y: 0, z: 0.5),
-    ]
-    let indices: [[UInt32]] = [
-        [2, 1, 0],
-        [2, 1, 0],
-        [2, 1, 0],
-        [3, 2, 0],
-        [3, 2, 0],
-        [3, 2, 0],
-        [3, 1, 2],
-        [3, 1, 2],
-        [3, 1, 2],
-        [1, 3, 0],
-        [1, 3, 0],
-        [1, 3, 0],
+    let positions: [Vector] = [
+        Vector(x: 0.05, y: 0, z: 0), // 0
+        Vector(x: -0.05, y: 0, z: 0), // 1
+        Vector(x: 0, y: 1, z: 0), // 2
+        Vector(x: 0, y: 0, z: 0.5), // 3
     ]
 
-    // compute the normals based on the cross-product of the
-    // vertices in the triangle.
-    var normals: [SCNVector3] = []
-    for indexset in indices {
-        let a = positions[Int(indexset[0])].simd_float3
-        let b = positions[Int(indexset[1])].simd_float3
-        let c = positions[Int(indexset[2])].simd_float3
-        let normal = SCNVector3(simd.normalize(simd.cross(a - c, b - c)))
-        normals.append(normal)
-        normals.append(normal)
-        normals.append(normal)
+    guard let back = Triangle(positions[0], positions[1], positions[2]),
+       let bottom = Triangle(positions[0], positions[3], positions[1]),
+       let left = Triangle(positions[0], positions[2], positions[3]),
+       let right = Triangle(positions[2], positions[1], positions[3])
+    else {
+        return SCNNode()
     }
-    let sources = [
-        SCNGeometrySource(vertices: positions),
-        SCNGeometrySource(normals: normals),
-    ]
-    let g = SCNGeometry(sources: sources,
-                        elements: indices.map { indices in
-                            SCNGeometryElement(indices: indices, primitiveType: .triangles)
-                        })
+    
+    let mesh = Mesh([back, bottom, left, right])
+    let g = SCNGeometry(mesh)
     g.materials = [material]
-
     return SCNNode(geometry: g)
 }
 
