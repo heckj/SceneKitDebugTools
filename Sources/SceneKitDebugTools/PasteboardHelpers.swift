@@ -24,3 +24,7 @@ import Foundation
         UIPasteboard.general.setValue(value, forPasteboardType: "public.plain-text")
     }
 #endif
+
+#if (os(tvOS) || os(watchOS))
+    func writeStringToPasteboard(_ value: String) {}
+#endif
