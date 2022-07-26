@@ -13,6 +13,10 @@ swift build --target SceneKitDebugTools \
 -Xswiftc -emit-symbol-graph \
 -Xswiftc -emit-symbol-graph-dir -Xswiftc .build/symbol-graphs
 
+# Enables deterministic output
+# - useful when you're committing the results to host on github pages
+export DOCC_JSON_PRETTYPRINT=YES
+
 # cull the non-Lindenmayer specific builds from the symbol graph files
 rm -f .build/symbol-graphs/MeshGenerator*
 
