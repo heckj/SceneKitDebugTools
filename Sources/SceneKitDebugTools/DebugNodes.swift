@@ -5,10 +5,10 @@
 //  Created by Joseph Heck on 1/8/22.
 //
 
+import MeshGenerator
 import SceneKit
 import simd
 import SwiftUI
-import MeshGenerator
 
 func degreesToRadians(_ value: Double) -> Float {
     Float(value * .pi / 180.0)
@@ -59,7 +59,7 @@ func directionalFin(material: SCNMaterial) -> SCNNode {
 /// - ``debugFlooring(grid:)``
 ///
 /// ### Directional Indicators
-/// 
+///
 /// - ``headingIndicator()``
 /// - ``axis(length:labels:)``
 

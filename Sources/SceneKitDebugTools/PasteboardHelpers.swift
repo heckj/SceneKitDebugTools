@@ -25,6 +25,6 @@ import Foundation
     }
 #endif
 
-#if (os(tvOS) || os(watchOS))
-    func writeStringToPasteboard(_ value: String) {}
+#if os(tvOS) || os(watchOS)
+    func writeStringToPasteboard(_: String) {}
 #endif
