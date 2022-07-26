@@ -9,10 +9,6 @@ mkdir -p html
 rm -rf .build
 mkdir -p .build/symbol-graphs
 
-# Enables deterministic output
-# - useful when you're committing the results to host on github pages
-export DOCC_JSON_PRETTYPRINT=YES
-
 swift build --target SceneKitDebugTools \
 -Xswiftc -emit-symbol-graph \
 -Xswiftc -emit-symbol-graph-dir -Xswiftc .build/symbol-graphs
@@ -20,7 +16,6 @@ swift build --target SceneKitDebugTools \
 # cull the non-Lindenmayer specific builds from the symbol graph files
 rm -f .build/symbol-graphs/MeshGenerator*
 
-# run the analysis process to report on the docs status
 xcrun docc convert Sources/SceneKitDebugTools/Documentation.docc \
 --analyze \
 --fallback-display-name SceneKitDebugTools \
@@ -43,10 +38,12 @@ xcrun docc convert Sources/SceneKitDebugTools/Documentation.docc \
 
 # Swift package plugin for hosted content:
 #
+
 swift package \
     --allow-writing-to-directory ./docs \
-    --target SceneKitDebugTools \
     generate-documentation \
+    --fallback-bundle-identifier com.github.heckj.SceneKitDebugTools \
+    --target SceneKitDebugTools \
     --output-path ./docs \
     --emit-digest \
     --disable-indexing \
@@ -58,7 +55,8 @@ swift package \
 #
 
 cat docs/linkable-entities.json| jq '.[].referenceURL' -r > all_identifiers.txt
-sort all_identifiers.txt | sed -e 's/doc:\/\/SceneKitDebugTools\/documentation\///g' \
+sort all_identifiers.txt | sed -e 's/doc:\/\/com\.github\.heckj\.SceneKitDebugTools\/documentation\///g' \
 | sed -e 's/^/- ``/g' | sed -e 's/$/``/g' > all_symbols.txt
+
 
 echo "Page will be available at https://heckj.github.io/SceneKitDebugTools/documentation/scenekitdebugtools/"
